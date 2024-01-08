@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+<style>
+	.register{
+		width:500px;
+		margin:200px auto auto auto;
+		text-align: center;
+		background-color: white;
+	}	
+</style>
+
+<script>
+function Checkform() {
+    if( frm.name.value == "" ) {
+        frm.name.focus();
+        alert("성명을 입력해 주십시오.");
+        return false;
+    }
+
+    if( frm.personal_number.value == "" ) {
+        frm.personal_number.focus();
+        alert("주민번호를 입력해 주십시오.");
+        return false;
+    }
+    if( frm.id.value == "" ) {
+        frm.id.focus();
+        alert("아이디를 입력해 주십시오.");
+        return false;
+    }
+    if( frm.password.value == "" ) {
+        frm.password.focus();
+        alert("비밀번호를 입력해 주십시오.");
+        return false;
+    }
+}
+</script>
+
+</head>
+<body>
+<div class = "register">
+	<h1 class="title">CUSTOM PC</h1>
+<form action="register.jsp" name="frm" method="post" onSubmit="return Checkform()">
+<fieldset>
+    <legend>개인 정보 입력</legend>
+    성명 : <input type="text" name="name"><br><br>
+    주민번호 : <input type="text" name="personal_number"/><br>
+    *900101-1234567 형식으로 입력해주세요*<br><br>
+    ID : <input type="text" name="id" /><br><br>
+    PASSWORD : <input type="password" name="password" /><br><br>
+	성별 : 남<input type="radio" name="gender" value="male" /> 여<input type="radio" name="gender" value="female" /><br><br>
+    <input type="submit" value="가입하기" />
+</fieldset>
+</form>
+</div>
+</body>
+</html>
